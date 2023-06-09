@@ -79,4 +79,5 @@ public void createIndex(String strTableName, String[] strarrColName) throws DBAp
 public void insertIntoTable(String strTableName, Hashtable<String,Object> htblColNameValue) throws DBAppException(){} 
 public void updateTable(String strTableName, String strClusteringKeyValue, Hashtable<String,Object> htblColNameValue ) throws DBAppException(){}
 public void deleteFromTable(String strTableName,Hashtable<String,Object> htblColNameValue) throws DBAppException(){}
-public Iterator selectFromTable(SQLTerm[] arrSQLTerms, String[] strarrOperators) throws DBAppException(){}```
+public Iterator selectFromTable(SQLTerm[] arrSQLTerms, String[] strarrOperators) throws DBAppException(){}
+```
