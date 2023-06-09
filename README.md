@@ -30,7 +30,7 @@ In this project, you are going to build a small database engine with support for
 
     * min and max refer to the minimum and maximum values possible for that column. For example, if a user creates a table/relation CityShop, specifying several attributes with their types, etc… the file will be:
 
-Markup : ``` Table Name, Column Name, Column Type, ClusteringKey, IndexName,IndexType, min, max 
+``` Table Name, Column Name, Column Type, ClusteringKey, IndexName,IndexType, min, max 
 CityShop, ID, java.lang.Integer, True, null, null, 0,10000 
 CityShop, Name, java.lang.String, False, NameAddrSpecIndex, Octree, “A”, “ZZZZZZZZZZZ” 
 CityShop, X, java.lang.Double, False, XYZIndex, Octree, 0,1000000 
@@ -72,10 +72,10 @@ treat metadata.csv as decoration!
 13. Iterator is java.util.Iterator It is an interface that enables client code to iterate over the results row by row. Whatever object you return holding the result set, it should implement the Iterator interface. 14.You should check on the passed types and do not just accept any type – otherwise, your code will crash with invalid input. *Your main class should be called DBApp.java and should have the following seven methods with the signature as specified. The parameters names are written using Hungarian notation
 
 
-Markup: ''' public void init( ); 
-public void createTable(String strTableName, String strClusteringKeyColumn, Hashtable<String,String> htblColNameType, Hashtable<String,String> htblColNameMin, Hashtable<String,String> htblColNameMax ) throws DBAppException(){}
+```public void init( ); 
+**public void createTable(String strTableName, String strClusteringKeyColumn, Hashtable<String,String> htblColNameType, Hashtable<String,String> htblColNameMin, Hashtable<String,String> htblColNameMax ) throws DBAppException(){}
 public void createIndex(String strTableName, String[] strarrColName) throws DBAppException(){}
 public void insertIntoTable(String strTableName, Hashtable<String,Object> htblColNameValue) throws DBAppException(){} 
 public void updateTable(String strTableName, String strClusteringKeyValue, Hashtable<String,Object> htblColNameValue ) throws DBAppException(){}
 public void deleteFromTable(String strTableName,Hashtable<String,Object> htblColNameValue) throws DBAppException(){}
-public Iterator selectFromTable(SQLTerm[] arrSQLTerms, String[] strarrOperators) throws DBAppException(){} '''
+public Iterator selectFromTable(SQLTerm[] arrSQLTerms, String[] strarrOperators) throws DBAppException(){}```
