@@ -30,7 +30,7 @@ In this project, you are going to build a small database engine with support for
 
     * min and max refer to the minimum and maximum values possible for that column. For example, if a user creates a table/relation CityShop, specifying several attributes with their types, etc… the file will be:
 
-``` Table Name, Column Name, Column Type, ClusteringKey, IndexName,IndexType, min, max 
+Markup : ``` Table Name, Column Name, Column Type, ClusteringKey, IndexName,IndexType, min, max 
 CityShop, ID, java.lang.Integer, True, null, null, 0,10000 
 CityShop, Name, java.lang.String, False, NameAddrSpecIndex, Octree, “A”, “ZZZZZZZZZZZ” 
 CityShop, X, java.lang.Double, False, XYZIndex, Octree, 0,1000000 
