@@ -23,8 +23,18 @@ Markup :
 5. If all the rows in a page are deleted, then you are required to delete that page. Do not keep around completely empty pages. In the case of insert, if you are trying to insert in a full page, shift one row down to the following page. Do not create a new page unless you are in the last page of the table and that last one was full.
 6. You might find it useful to create a Table java class to store relevant information about the pages and serialize it just like you serialize a page.
 
-Markup: 
 * You will need to store the meta-data in a text file. This should have the following layout: 
 ***TableName,ColumnName, ColumnType, ClusteringKey, IndexName, IndexType, min, max***
+
     * ClusteringKey is set true if the column is the primary key. For simplicity, you will always sort the rows in the table according to the primary key. That’s why, it is also called the clusteringkey. Only 1 clustering key per table.
+
     * min and max refer to the minimum and maximum values possible for that column. For example, if a user creates a table/relation CityShop, specifying several attributes with their types, etc… the file will be:
+
+``` Table Name, Column Name, Column Type, ClusteringKey, IndexName,IndexType, min, max 
+CityShop, ID, java.lang.Integer, True, null, null, 0,10000 
+CityShop, Name, java.lang.String, False, NameAddrSpecIndex, Octree, “A”, “ZZZZZZZZZZZ” 
+CityShop, X, java.lang.Double, False, XYZIndex, Octree, 0,1000000 
+CityShop, Y, java.util.Double, False, XYZIndex, Octree, 0,1000000 
+CityShop, Z, java.lang.Double, False, XYZIndex, Octree, 0,1000000 
+CityShop, Specialization, java.lang.String, False, NameAddrSpecIndex, Octree, “A”, “ZZZZZZZZZZZ” 
+CityShop, Address, java.lang.String, False, NameAddrSpecIndex, Octree, “A”, “ZZZZZZZZZZZ” ```
