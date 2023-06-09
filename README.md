@@ -37,7 +37,7 @@ CityShop, X, java.lang.Double, False, XYZIndex, Octree, 0,1000000
 CityShop, Y, java.util.Double, False, XYZIndex, Octree, 0,1000000 
 CityShop, Z, java.lang.Double, False, XYZIndex, Octree, 0,1000000 
 CityShop, Specialization, java.lang.String, False, NameAddrSpecIndex, Octree, “A”, “ZZZZZZZZZZZ” 
-CityShop, Address, java.lang.String, False, NameAddrSpecIndex, Octree, “A”, “ZZZZZZZZZZZ” ```
+CityShop, Address, java.lang.String, False, NameAddrSpecIndex, Octree, “A”, “ZZZZZZZZZZZ”```
 
 * You must store the above metadata in a single file called metadata.csv. Do not worry about its size in your solution (i.e. do not page it).
 * You must use the metadata.csv file to learn about the types of the data being passed and verify it is of the correct type. So, do not 
