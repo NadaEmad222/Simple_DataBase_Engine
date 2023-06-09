@@ -46,23 +46,36 @@ treat metadata.csv as decoration!
 ## Indices
 
 1. You are required to use an Octree to support creating indices. An Octree is on exactly 3 dimensions. You are not required to support other type of indices.
+
 2. Each column has an associated range (minimum, maximum). You should use this range to create the divisions on the Index scale.
+
 3. You should update existing relevant indices when a tuple is inserted/deleted.
+
 4. If an index is created after a table has been populated, you have no option but to scan the whole table to get the data read and inserted into the index.
+
 5. Upon application startup; to avoid having to scan all tables to build existing indices, you should save the index itself to disk and load it when the application starts next time.
-6. When a table is created, you do not need to create an index. An index will be created later on when the user requests that through a method call to createIndex
+
+6. When a table is created, you do not need to create an index. An index will be created later on when the user requests that through a method call to createIndex.
+
 7. Once an index exists, it should be used in executing queries where possible. Hence, if an index does not exist on columns that are being queried,(e.g. select * from T where x = 20 and y= 30 and z = 20), then the query will be answered using linear scanning in T. However, if an index is created on the 3 columns queried, then the index should be used.
+
 8. Note that indices should be used in answering multi-dimension partial queries if an index has been created on any of columns used in the query, e.g. select * from Table1 where Table1.column1=value1 and Table1.column2=value2 and Table1.column3=value3 andTable1.column4=value4; and an index has been created on Table1.column1, Table1.column2, and Table1.column3 then it should be used in answering the query.
+
 9. Operator Inside SQLTerm can either be >, >=, <, <=, != or =
+
 10. Operator between SQLTerm (as in strarrOperators above) are AND, OR, or XOR.
+
 11. DBAppException is a generic exception to avoid breaking the test cases when they run. You can customize the Exception by passing a different message upon creation. You should throw the exception whenever you are passed data you that will violate the integrity of your schema.
-12. SQLTerm is a class with 4 attributes: String _strTableName, String _strColumnName, String _strOperator and Object _objValue
+
+12. SQLTerm is a class with 4 attributes: String _strTableName, String _strColumnName, String _strOperator and Object _objValue.
+
 13. Iterator is java.util.Iterator It is an interface that enables client code to iterate over the results row by row. Whatever object you return holding the result set, it should implement the Iterator interface. 14.You should check on the passed types and do not just accept any type – otherwise, your code will crash with invalid input. *Your main class should be called DBApp.java and should have the following seven methods with the signature as specified. The parameters names are written using Hungarian notation
 
-Markup : '''public void init( ); 
+
+Markup: ''' public void init( ); 
 public void createTable(String strTableName, String strClusteringKeyColumn, Hashtable<String,String> htblColNameType, Hashtable<String,String> htblColNameMin, Hashtable<String,String> htblColNameMax ) throws DBAppException(){}
 public void createIndex(String strTableName, String[] strarrColName) throws DBAppException(){}
 public void insertIntoTable(String strTableName, Hashtable<String,Object> htblColNameValue) throws DBAppException(){} 
 public void updateTable(String strTableName, String strClusteringKeyValue, Hashtable<String,Object> htblColNameValue ) throws DBAppException(){}
 public void deleteFromTable(String strTableName,Hashtable<String,Object> htblColNameValue) throws DBAppException(){}
-public Iterator selectFromTable(SQLTerm[] arrSQLTerms, String[] strarrOperators) throws DBAppException(){}'''
+public Iterator selectFromTable(SQLTerm[] arrSQLTerms, String[] strarrOperators) throws DBAppException(){} '''
